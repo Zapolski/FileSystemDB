@@ -1,6 +1,7 @@
 package by.zapolski;
 
 import by.zapolski.exception.NoSuchEntityException;
+import by.zapolski.model.MyFileDao;
 
 public class Main {
     public static void main(String[] args) {

@@ -86,11 +86,13 @@ public class ConnectorDB {
         throw new SQLException("connection in ConnectorDB is null");
     }
 
-    public void rollback(){
-        try {
-            connection.rollback();
-        } catch (SQLException e) {
-            e.printStackTrace();
+    public void rollbackQuietly(){
+        if (connection!=null){
+            try {
+                connection.rollback();
+            } catch (SQLException e) {
+                //e.printStackTrace();
+            }
         }
     }
 
@@ -102,6 +104,21 @@ public class ConnectorDB {
                 System.err.println("ResultSet is null "+e);
             }
         }
+    }
+
+    public void closeQuietly(AutoCloseable resource) {
+        if (resource!=null){
+            try{
+                resource.close();
+            }catch (Exception e){
+                /*NOP*/
+            }
+        }
+    }
+
+    public void closeQuietly(AutoCloseable... resources){
+        for (AutoCloseable resource: resources)
+            closeQuietly(resource);
     }
 
 
