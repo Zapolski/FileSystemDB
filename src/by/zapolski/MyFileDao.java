@@ -11,7 +11,6 @@ public class MyFileDao {
     ConnectorDB conn = new ConnectorDB();
 
     public MyFile selectByName(String name) throws NoSuchEntityException{
-
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try{
