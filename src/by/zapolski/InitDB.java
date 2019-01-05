@@ -1,5 +1,7 @@
 package by.zapolski;
 
+import by.zapolski.model.MyFile;
+
 import java.io.File;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

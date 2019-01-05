@@ -1,4 +1,4 @@
-package by.zapolski;
+package by.zapolski.model;
 
 public class MyFile {
 
